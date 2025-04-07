@@ -72,4 +72,37 @@ public class LoginStepDefinition extends AbstractSteps {
         Screenshots.addStepInReport(actualMessage.equals(message), "Error Message Displayed </br><b>Actual Error : </b>" + actualMessage + "</br><b> Expected Error : </b>" + message);
         pageObjectManager.getLoginPage().captureScreenshot("");
     }
+
+    @And("User navigates to Purchase and Opportunity tab.")
+    public void userNavigatesToPurchaseAndOpportunityTab() {
+        pageObjectManager.getLoginPage().clickOnPurchaseAndOpportunityTab();
+    }
+
+    @Then("verify user navigated to Purchase and Opportunity tab.")
+    public void verifyUserNavigatedToPurchaseAndOpportunityTab() {
+        pageObjectManager.getLoginPage().verifyTotalText("1,753.00 T");
+        Screenshots.addStepWithScreenshotInReport(pageObjectManager.getLoginPage().page, "User navigated to Purchase and opportunity tab.");
+    }
+
+    @And("User navigates to Lost and Cancelled Purchase tab.")
+    public void userNavigatesToLostAndCancelledPurchaseTab() {
+        pageObjectManager.getLoginPage().clickOnLostCancelledPurchaseTab();
+    }
+
+    @Then("verify user navigated to Lost and Cancelled tab.")
+    public void verifyUserNavigatedToLostAndCancelledTab() {
+        pageObjectManager.getLoginPage().verifyTotalText("20,006,133.22 T");
+        Screenshots.addStepWithScreenshotInReport(pageObjectManager.getLoginPage().page, "User navigated to Lost and Cancelled Purchase tab.");
+    }
+
+    @And("User navigates to closed Purchase tab.")
+    public void userNavigatesToClosedPurchaseTab() {
+        pageObjectManager.getLoginPage().clickOnClosedPurchaseTab();
+    }
+
+    @Then("verify user navigated to closed Purchase tab.")
+    public void verifyUserNavigatedToClosedPurchaseTab() {
+        pageObjectManager.getLoginPage().verifyTotalText("294,457.56 T");
+        Screenshots.addStepWithScreenshotInReport(pageObjectManager.getLoginPage().page, "User navigated to Closed Purchase tab.");
+    }
 }

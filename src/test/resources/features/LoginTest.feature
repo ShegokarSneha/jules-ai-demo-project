@@ -27,4 +27,17 @@ Feature: Jules Ai Login scenario
     And Verify error message as "Email not valid" for email field
     Then Verify error message for "Password too short" password field
 
+  Scenario: TC05_Dashboard_Navigation_Test
+    Given User launches the browser with url
+    When User enters email and password and Clicks on Login
+    Then Verify user logged in successfully
+    And User navigates to Purchase and Opportunity tab.
+    Then verify user navigated to Purchase and Opportunity tab.
+    And User navigates to Lost and Cancelled Purchase tab.
+    Then verify user navigated to Lost and Cancelled tab.
+    And User navigates to closed Purchase tab.
+    Then verify user navigated to closed Purchase tab.
+
+
+
 
