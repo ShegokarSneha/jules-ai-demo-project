@@ -81,7 +81,7 @@ public class LoginStepDefinition extends AbstractSteps {
     @Then("verify user navigated to Purchase and Opportunity tab.")
     public void verifyUserNavigatedToPurchaseAndOpportunityTab() {
         pageObjectManager.getLoginPage().verifyTotalText("1,753.00 T");
-        Screenshots.addStepWithScreenshotInReport(pageObjectManager.getLoginPage().page, "User navigated to Purchase and opportunity tab.");
+        pageObjectManager.getLoginPage().captureScreenshot("User navigated to Purchase and opportunity tab.");
     }
 
     @And("User navigates to Lost and Cancelled Purchase tab.")
@@ -92,7 +92,7 @@ public class LoginStepDefinition extends AbstractSteps {
     @Then("verify user navigated to Lost and Cancelled tab.")
     public void verifyUserNavigatedToLostAndCancelledTab() {
         pageObjectManager.getLoginPage().verifyTotalText("20,006,133.22 T");
-        Screenshots.addStepWithScreenshotInReport(pageObjectManager.getLoginPage().page, "User navigated to Lost and Cancelled Purchase tab.");
+        pageObjectManager.getLoginPage().captureScreenshot("User navigated to Lost and Cancelled Purchase tab.");
     }
 
     @And("User navigates to closed Purchase tab.")
@@ -103,6 +103,6 @@ public class LoginStepDefinition extends AbstractSteps {
     @Then("verify user navigated to closed Purchase tab.")
     public void verifyUserNavigatedToClosedPurchaseTab() {
         pageObjectManager.getLoginPage().verifyTotalText("294,457.56 T");
-        Screenshots.addStepWithScreenshotInReport(pageObjectManager.getLoginPage().page, "User navigated to Closed Purchase tab.");
+        pageObjectManager.getLoginPage().captureScreenshot("User navigated to Closed Purchase tab.");
     }
 }
